@@ -4,9 +4,6 @@ import os
 from sqlalchemy import create_engine
 
 
-hs_data_csv = pd.DataFrame(pd.read_csv(f'/home/mike/Documents/Python/HappySignals/sanitizeddata/STP.csv',
-    header=0, skip_blank_lines=True))
-
 param_dic = {
     "host"      : "localhost",
     "database"  : "happy_signals",
@@ -22,11 +19,3 @@ connect = "postgresql+psycopg2://%s:%s@%s:5432/%s" % (
 )
 
 engine = create_engine(connect)
-
-
-hs_data_csv.to_sql('stp_mapping', con=engine, if_exists='replace', index = False)
-
-
-# conn.commit()
-# cur.close()
-# conn.close()
