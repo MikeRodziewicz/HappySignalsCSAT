@@ -1,4 +1,4 @@
-from data_reader import engine
+from db_connection import engine
 from pandas_data import read_hs_data, read_stp_mapping
 
 
@@ -8,7 +8,6 @@ def main():
                             index = False)
     read_stp_mapping().to_sql('stp_mapping', con=engine, if_exists='replace',
                             index = False)
-
 
 
 if __name__ == '__main__':
