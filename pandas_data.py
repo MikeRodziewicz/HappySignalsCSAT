@@ -18,9 +18,6 @@ def read_stp_mapping():
     return stp_mapping
 
 
-# print(read_stp_mapping())
-print(read_hs_data())
-
 
 class Date_Stamps():
 
